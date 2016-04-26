@@ -10,7 +10,7 @@
 # Run this on the remote system: 'winrm quickconfig'
 
 # Get appropriate credentials (will prompt for password)
-$computerName = "10.238.40.19"
+$computerName = "<enter IP Address here>"
 $dataCollectorSet = "SqlServerAndSystemPerformance"
 $counters = ("\Memory\Available MBytes",
              "\Memory\Pages/sec",
@@ -59,7 +59,7 @@ $counters = ("\Memory\Available MBytes",
 #Read-Host "emperfdb-w2k8\administrator" -AsSecureString | ConvertFrom-SecureString | Out-File C:\Temp\PerfMon\administratorPassword.txt
 #$Password = Get-Content C:\Temp\PerfMon\administratorPassword.txt | convertto-securestring 
 $Username = "emperfdb-w2k8\administrator" 
-$Password = "t3sti9" | ConvertTo-SecureString -asPlainText -Force
+$Password = "<enter password here>" | ConvertTo-SecureString -asPlainText -Force
 $Credential = new-object -typename System.Management.Automation.PSCredential -argumentlist $Username, $Password 
 
 Write-Output "Creating Data Collector Set"
